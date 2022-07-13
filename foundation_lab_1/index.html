@@ -4,8 +4,8 @@
     <title>Foundations lab 1 - Data Structures</title>
     <meta charset="utf-8" />
     <meta name="author" content="Jeanne McClure, Jennifer Houchins" />
-    <meta name="date" content="2022-07-11" />
-    <script src="libs/header-attrs-2.14/header-attrs.js"></script>
+    <meta name="date" content="2022-07-13" />
+    <script src="libs/header-attrs-2.11/header-attrs.js"></script>
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet" />
     <script src="libs/panelset-0.2.6/panelset.js"></script>
@@ -37,7 +37,7 @@ class: clear, title-slide, inverse, center, top, middle
 # Foundations lab 1 - Data Structures
 ----
 ### Jeanne McClure, Jennifer Houchins
-### July 11, 2022
+### July 13, 2022
 
 ---
 # Recap from Orientation lab
@@ -825,13 +825,13 @@ head(online_classes, n=5)
 
 ```
 ## # A tibble: 5 × 30
-##   student_id course_id     total_points_possi… total_points_ea… percentage_earn…
-##        &lt;dbl&gt; &lt;chr&gt;                       &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;
-## 1      43146 FrScA-S216-02                3280             2220            0.677
-## 2      44638 OcnA-S116-01                 3531             2672            0.757
-## 3      47448 FrScA-S216-01                2870             1897            0.661
-## 4      47979 OcnA-S216-01                 4562             3090            0.677
-## 5      48797 PhysA-S116-01                2207             1910            0.865
+##   student_id course_id     total_points_poss… total_points_ear… percentage_earn…
+##        &lt;dbl&gt; &lt;chr&gt;                      &lt;dbl&gt;             &lt;dbl&gt;            &lt;dbl&gt;
+## 1      43146 FrScA-S216-02               3280              2220            0.677
+## 2      44638 OcnA-S116-01                3531              2672            0.757
+## 3      47448 FrScA-S216-01               2870              1897            0.661
+## 4      47979 OcnA-S216-01                4562              3090            0.677
+## 5      48797 PhysA-S116-01               2207              1910            0.865
 ## # … with 25 more variables: subject &lt;chr&gt;, semester &lt;chr&gt;, section &lt;chr&gt;,
 ## #   Gradebook_Item &lt;chr&gt;, Grade_Category &lt;lgl&gt;, FinalGradeCEMS &lt;dbl&gt;,
 ## #   Points_Possible &lt;dbl&gt;, Points_Earned &lt;dbl&gt;, Gender &lt;chr&gt;, q1 &lt;dbl&gt;,
@@ -862,13 +862,13 @@ head(csss_tweets, n = 5)
 
 ```
 ## # A tibble: 5 × 91
-##   user_id             status_id     created_at          screen_name text  source
-##   &lt;chr&gt;               &lt;chr&gt;         &lt;dttm&gt;              &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt; 
-## 1 1331246991762976769 136572200862… 2021-02-27 17:54:35 InnerSchol… "@We… Twitt…
-## 2 1331246991762976769 136572187371… 2021-02-27 17:54:03 InnerSchol… "@Bo… Twitt…
-## 3 1331246991762976769 136572178780… 2021-02-27 17:53:42 InnerSchol… "@Co… Twitt…
-## 4 1331246991762976769 136572174606… 2021-02-27 17:53:32 InnerSchol… "@Co… Twitt…
-## 5 1331246991762976769 136572164488… 2021-02-27 17:53:08 InnerSchol… "Ano… Twitt…
+##   user_id             status_id  created_at          screen_name text     source
+##   &lt;chr&gt;               &lt;chr&gt;      &lt;dttm&gt;              &lt;chr&gt;       &lt;chr&gt;    &lt;chr&gt; 
+## 1 1331246991762976769 136572200… 2021-02-27 17:54:35 InnerSchol… "@WeAre… Twitt…
+## 2 1331246991762976769 136572187… 2021-02-27 17:54:03 InnerSchol… "@Bored… Twitt…
+## 3 1331246991762976769 136572178… 2021-02-27 17:53:42 InnerSchol… "@Commo… Twitt…
+## 4 1331246991762976769 136572174… 2021-02-27 17:53:32 InnerSchol… "@Commo… Twitt…
+## 5 1331246991762976769 136572164… 2021-02-27 17:53:08 InnerSchol… "Anothe… Twitt…
 ## # … with 85 more variables: display_text_width &lt;dbl&gt;, reply_to_status_id &lt;chr&gt;,
 ## #   reply_to_user_id &lt;chr&gt;, reply_to_screen_name &lt;chr&gt;, is_quote &lt;lgl&gt;,
 ## #   is_retweet &lt;lgl&gt;, favorite_count &lt;dbl&gt;, retweet_count &lt;dbl&gt;,
@@ -902,13 +902,13 @@ head(csss_tweets, n = 5)
 
 ```
 ## # A tibble: 5 × 91
-##   user_id             status_id     created_at          screen_name text  source
-##   &lt;chr&gt;               &lt;chr&gt;         &lt;dttm&gt;              &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt; 
-## 1 1331246991762976769 136572200862… 2021-02-27 17:54:35 InnerSchol… "@We… Twitt…
-## 2 1331246991762976769 136572187371… 2021-02-27 17:54:03 InnerSchol… "@Bo… Twitt…
-## 3 1331246991762976769 136572178780… 2021-02-27 17:53:42 InnerSchol… "@Co… Twitt…
-## 4 1331246991762976769 136572174606… 2021-02-27 17:53:32 InnerSchol… "@Co… Twitt…
-## 5 1331246991762976769 136572164488… 2021-02-27 17:53:08 InnerSchol… "Ano… Twitt…
+##   user_id             status_id  created_at          screen_name text     source
+##   &lt;chr&gt;               &lt;chr&gt;      &lt;dttm&gt;              &lt;chr&gt;       &lt;chr&gt;    &lt;chr&gt; 
+## 1 1331246991762976769 136572200… 2021-02-27 17:54:35 InnerSchol… "@WeAre… Twitt…
+## 2 1331246991762976769 136572187… 2021-02-27 17:54:03 InnerSchol… "@Bored… Twitt…
+## 3 1331246991762976769 136572178… 2021-02-27 17:53:42 InnerSchol… "@Commo… Twitt…
+## 4 1331246991762976769 136572174… 2021-02-27 17:53:32 InnerSchol… "@Commo… Twitt…
+## 5 1331246991762976769 136572164… 2021-02-27 17:53:08 InnerSchol… "Anothe… Twitt…
 ## # … with 85 more variables: display_text_width &lt;dbl&gt;, reply_to_status_id &lt;chr&gt;,
 ## #   reply_to_user_id &lt;chr&gt;, reply_to_screen_name &lt;chr&gt;, is_quote &lt;lgl&gt;,
 ## #   is_retweet &lt;lgl&gt;, favorite_count &lt;dbl&gt;, retweet_count &lt;dbl&gt;,
@@ -993,7 +993,7 @@ Read in from Path
 
 
 ```r
-*sci_ol_classes &lt;- read_csv("C:/Users/User/Documents/RProj22/foundation_labs_2022/foundation_lab_1/data/sci-online-classes.csv")
+*sci_ol_classes &lt;- read_csv("/Users/kbwright/Kim/LASER Institute 2022/laser-orientation/foundational-skills/foundation_lab_1/data/sci-online-classes.csv")
 ```
 
 
@@ -1012,14 +1012,14 @@ head(air_quality, n=3)
 
 ```
 ## # A tibble: 3 × 17
-##   Date       Time   `CO(GT)` `PT08.S1(CO)` `NMHC(GT)` `C6H6(GT)` `PT08.S2(NMHC)`
-##   &lt;chr&gt;      &lt;chr&gt;     &lt;dbl&gt;         &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;           &lt;dbl&gt;
-## 1 10/03/2004 18.00…      2.6          1360        150       11.9            1046
-## 2 10/03/2004 19.00…      2            1292        112        9.4             955
-## 3 10/03/2004 20.00…      2.2          1402         88        9               939
-## # … with 10 more variables: `NOx(GT)` &lt;dbl&gt;, `PT08.S3(NOx)` &lt;dbl&gt;,
-## #   `NO2(GT)` &lt;dbl&gt;, `PT08.S4(NO2)` &lt;dbl&gt;, `PT08.S5(O3)` &lt;dbl&gt;, T &lt;dbl&gt;,
-## #   RH &lt;dbl&gt;, AH &lt;dbl&gt;, ...16 &lt;lgl&gt;, ...17 &lt;lgl&gt;
+##   Date       Time     `CO(GT)` `PT08.S1(CO)` `NMHC(GT)` `C6H6(GT)` `PT08.S2(NMHC)`
+##   &lt;chr&gt;      &lt;chr&gt;       &lt;dbl&gt;         &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;           &lt;dbl&gt;
+## 1 10/03/2004 18.00.00      2.6          1360        150       11.9            1046
+## 2 10/03/2004 19.00.00      2            1292        112        9.4             955
+## 3 10/03/2004 20.00.00      2.2          1402         88        9               939
+## # … with 10 more variables: NOx(GT) &lt;dbl&gt;, PT08.S3(NOx) &lt;dbl&gt;, NO2(GT) &lt;dbl&gt;,
+## #   PT08.S4(NO2) &lt;dbl&gt;, PT08.S5(O3) &lt;dbl&gt;, T &lt;dbl&gt;, RH &lt;dbl&gt;, AH &lt;dbl&gt;,
+## #   ...16 &lt;lgl&gt;, ...17 &lt;lgl&gt;
 ```
 
 

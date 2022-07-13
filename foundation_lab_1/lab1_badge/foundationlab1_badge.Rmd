@@ -1,7 +1,7 @@
 ---
 title: 'Data Sources badge'
 subtitle: "LASER Institute Foundation Learning Lab 1"
-author: "Jeanne McClure"
+author: "Kim Wright"
 date: "`r format(Sys.Date(),'%B %e, %Y')`"
 output: html_document
 ---
@@ -25,83 +25,98 @@ Use the institutional library (e.g. [NCSU Library](https://www.lib.ncsu.edu/#art
 
 1.  Provide an APA citation for your selected study.
 
-    -   
+    -   Lai, R.P.Y. (2021). Teachers’ ontological perspectives of computational thinking and assessment: A text mining approach. *Journal of Educational Computing Research, 60*(3), 661-695.
 
 2.  What types of data are associated with LA ?
 
-    -   
+    -   survey data with free-response questions
 
 
 3.  What type of data structures are analyzed in the educational context?
 
-    -   
+    -   structured and semi-structured data
 
 4.  How might this article be used to better understand a dataset or educational context of personal or professional interest to you?
 
-    -   
+    -   This article uses an LA method that I think will be most relevant to my work, text mining. In addition, the data source (survey data), and participants (teachers) are very similar to much of what I do, so I think this article is a pretty close match to the type of LA study I might do. 
+    
 
 5.  Finally, how do these processes compare with what teachers and educational organizations already do to support and assess student learning? 
 
-    -   
+    -   As the authors asserted, text mining was used to mitigate two common problems with text data: (1) the difficulty and time involved with hand-coding responses, and (2) potential bias in human interpretation of coded text. I can particularly relate to the first problem because my center frequently uses open-ended questions to provide feedback to our evaluation stakeholders, but hand-coding more than about 20 responses is a time-intensive process that our small team does not typically have sufficient time to do well.
+
 
 Draft a research question of guided by techniques and data sources that you are potentially interested in exploring in more depth.
 
+- A research question I would like to explore using LA is related to the identification of themes present in school districts’ readiness for online state testing based responses to an open-ended survey question  
+
 1.  What data source(s) should be analyzed or discussed?
 
-    -   
+    -   I will analyze existing survey data from around 900 school districts across the state of Texas that was collected during the spring of 2020 regarding the state's mandated shift to online testing by the spring of 2023.
 
 2.  What is the purpose of your article?
 
-    -   
+    -   The purpose of my article will be to provide more detail about how school districts were feeling following the passage of a House Bill requiring that 100% of Texas K-12 students take state tests online and also provide information about how district contextual factors (e.g., size, urbanicity, location) impacted their feelings of readiness for the move to online testing. 
 
 3.  Explain the analytical level at which these data would need to be collected and analyzed.
 
-    -   
+    -   These data were collected at the district level and would be analyzed at the case (i.e. district) level.
 
 4.  How, if at all, will your article touch upon the application(s) of LA to “understand and improve learning and the contexts in which learning occurs?”
 
-    -   
+    -   The open-ended survey question had over 900 detailed responses (75% of Texas' school districts), but at the time of survey, I did not have the skillset to use text mining to look across responses for meaningful relationships, nor did we have time to sufficiently hand code all of the responses. Text mining will allow me to look at themes and sentiment of districts to provide additional context around the implementation of online testing in Texas.
 
 
 
 ### Part II: Data Product
 
-After you finish the script file for [lab1_badge](https://github.com/laser-institute/foundational-skills/tree/master/foundation_lab_1/lab1_badge) add the code fo reach problem into the correct code chunks below. # Making sure not to change the code chunk name.
+After you finish the script file for [lab1_badge](https://github.com/laser-institute/foundational-skills/tree/master/foundation_lab_1/lab1_badge) add the code for each problem into the correct code chunks below. # Making sure not to change the code chunk name.
 
 
 ```{r, problem_1}
-# YOUR FINAL CODE HERE
-
+# Kim's FINAL CODE HERE
+Students <- c('Thor','Rogue','Electra','Electra', 'Wolverine')
+Foods <- c('Bread','Orange','Chocolate', 'Carrots' , 'Milk')
+data <- data.frame(Students,Foods)
+data
 
 ```
 
 
 ```{r, problem_2}
-# YOUR FINAL CODE HERE
-
+# Kim's FINAL CODE HERE
+table(Students)
 
 ```
 
 
 ```{r, problem_3}
-# YOUR FINAL CODE HERE
-
+# Kim's FINAL CODE HERE
+kims_vector <- c(1, 5, 4, 9, 7)
+sum(kims_vector)
 
 ```
 
 
 
 ```{r, problem_4}
-# YOUR FINAL CODE HERE
+# Kim's FINAL CODE HERE
+library(tidyverse)
+sci_classes <- read_csv("~/Kim/LASER Institute 2022/laser-orientation/foundational-skills/foundation_lab_1/data/sci-online-classes.csv")
 
+view(sci_classes)
+head(sci_classes, n=5)
+tail(sci_classes, n =5)
+
+#The head and tail functions give me a tibble because it is just the first and last five rows of data, but the view(sci_classes) function shows me the whole dataset.
 
 ```
 
 
 
 ```{r, problem_5}
-# YOUR FINAL CODE HERE
-
+# Kim's FINAL CODE HERE
+Smaller_sci_classes <- select(sci_classes, -subject, -section)
 
 ```
 

@@ -9,13 +9,14 @@
 
 # Create a data frame that includes two columns, one named "Students" and the other named "Foods". The first column should be this vector (note the intentional repeated values): Thor, Rogue, Electra, Electra, Wolverine
 
-
 #The second column should be this vector: Bread, Orange, Chocolate, Carrots, Milk
 
 
 #### Write your code below:
-
-
+Students <- c('Thor','Rogue','Electra','Electra', 'Wolverine')
+Foods <- c('Bread','Orange','Chocolate', 'Carrots' , 'Milk')
+data <- data.frame(Students,Foods)
+view(data)
 
 
 ################
@@ -24,8 +25,8 @@
 
 # Using the data frame created in Problem 2, use the table() command to create a frequency table for the column called "Students".
 
-
-
+data  
+table(Students)
 
 ################
 ## Problem 3 ###

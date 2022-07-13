@@ -4,7 +4,6 @@
 
 # Set from Session or...
 
-setwd("C:/Users/User/Documents/RProj22/foundation_labs_2022/foundation_lab_1")
 
 
 
@@ -52,7 +51,9 @@ view(csss_tweets)
 ####### From Path ##########
 ############################
 
-sci_ol_classes <- read_csv("C:/Users/User/Documents/RProj22/foundation_labs_2022/foundation_lab_1/data/sci-online-classes.csv")
+#to find the file path, go to finder and right click on file and select "Get Info" and copy file path from "User" over and paste into "" 
+
+sci_ol_classes <- read_csv("data/sci-online-classes.csv")
 
 sci_ol_classes
 
