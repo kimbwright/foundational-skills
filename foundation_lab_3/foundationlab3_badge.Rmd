@@ -25,38 +25,39 @@ Use the institutional library (e.g. [NCSU Library](https://www.lib.ncsu.edu/#art
 
 1.  Provide an APA citation for your selected study.
 
-    -   
+    -   Lai, R.P.Y. (2021). Teachers’ ontological perspectives of computational thinking and assessment: A text mining approach. *Journal of Educational Computing Research, 60*(3), 661-695
 
 2.  What educational issue, “problem of practice,” and/or questions were addressed?
 
-    -   
+    -   Lai was examining how computer science teachers think about what computational thinking is and the extent to which it differs between teachers.
 
 
 3.  What are some common approaches EDA approaches used and what did they entail?
 
 
-    -   
+    -   Lai used bar graphs to display the most frequently used words to describe CT, as well as the TF-IDF.
 
-4.  How were data visualization or feature engineering used to support analysis, if at all?What were the key findings or conclusions?
+4.  How were data visualization or feature engineering used to support analysis, if at all? What were the key findings or conclusions?
 
-    -   
+    -  The author used graphs to represent the frequency of terms alongside the word clouds. The most frequent terms were "logic" and "think."
+    
 5. Finally,  what value, if any, might education practitioners find in these results?
 
-    -   
+    -  I think the greatest value of bar graphs in relation to text mining is that it provides easily interpretable representations of frequency, whereas word clouds don't resonate with some quant folks because they seem, idk, silly (?) or non-quantifiable. 
 
 Draft a new research question of guided by the the phases of the Learning Anlytics Workflow. Or use one of your current research questions.
 
 1.  What educational issue, “problem of practice,” and/or questions is  addressed??
 
-    -   
+    -   What are the most frequently used terms in the Texas districts' responses to their needs regarding a move to 100% online testing?
 
 2.  Briefly describe any steps of the EDA approach that will be used..
  
-    - 
+    - I will use text mining with ggplot to represent the term frequency in the open-ended survey responses.
 
 3.  What elements of EDA might require human judgement and decision making?
 
-    -   
+    -   The human judgement part comes into play when deciding how or if to layer the visualizations and also how or if to disaggregate findings by levels of a predictor.
 
 ### Part II: Data Product
 
@@ -80,7 +81,23 @@ Exercise 1:
 
 
 ```{r, data-viz1}
-# YOUR FINAL CODE HERE
+# Kim's FINAL CODE HERE
+#Thanks Jenn and Jeanne for collab'ing with me on this! :)
+#load libraries
+library(tidyverse)
+library(here)
+library(ggplot2)
+
+#read in data
+sci_classes <- read_csv("data/sci-online-classes.csv")
+sci_classes
+
+#create histogram
+sci_classes %>% 
+  ggplot(aes(fill=Gender, y=Gender, x=subject)) + 
+  geom_bar(position="stack", stat="identity") +
+  labs(title="Course Enrollment by Gender", caption = "What is potentially misleading about this graph?", x="Course", y = "Count by Gender")
+
 ```
 
 
@@ -96,7 +113,12 @@ Exercise 2:
   + Adjust or remove your legend as appropriate. 
 
 ```{r, data-viz2}
-# YOUR FINAL CODE HERE
+# Kim's FINAL CODE HERE
+ggplot(data = sci_classes, mapping = aes(x = total_points_earned, y = TimeSpent)) +
+  geom_point(alpha=0.5) +
+  geom_smooth(mapping = aes(color = subject), se = FALSE)+
+  labs(title="Total Points Earned by Time Spent", caption = "Dont' we feel bad for that outlier on the far right? #somuchtimespentforsolittledifference", x="Total Points Earned", y = "Time Spent in Course") + 
+  theme_classic()
 ```
 
 ### Knit & Submit

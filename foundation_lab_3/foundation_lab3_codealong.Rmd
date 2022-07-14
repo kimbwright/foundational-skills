@@ -23,7 +23,7 @@ library(here)
 Read in survey data from the previous session
 ```{r}
 data_to_explore <- read_csv(here("data", "data_to_explore.csv"))
-
+data_to
 # Choose a way to inspect your datat with what ever function you wish
 ```
 
@@ -130,9 +130,9 @@ ggplot(data_to_explore, aes(x = time_spent_hours, y = proportion_earned, color =
 #layer 2: +  geom function type
   geom_point() +
 #layer 4: add lables
-    x_lab(title="How Time Spent on Course LMS is Related to Points Earned in the Course", 
+    labs(title="How Time Spent on Course LMS is Related to Points Earned in the Course", 
        x="Time Spent (Hours)",
-       y = "Proportion of Points Earned")
+       y = "Proportion of Points Earned")+
 #layer 5: add facet wrap
   facet_wrap(~ subject) 
 ```
@@ -175,7 +175,7 @@ data_to_explore %>%
 # layer 3a: add bin size
 #layer 3b: add color
   geom_histogram(bins = 10,
-                 fill = "red", 
+                 fill = "blue", 
                  colour = "black") 
 ```
 
@@ -192,7 +192,7 @@ data_to_explore %>%
 # layer 3b: add color
   geom_histogram(bins = 10, fill = "red", colour = "black")+
 #layer 4: add Labels
-  labs(title="Time Spent on LMS histogram plot",x="Time Spent(hours)", y = "Count")+
+  labs(title="Time Spent on LMS",x="Time Spent(hours)", y = "Count")+
   theme_classic()
 ```
 
@@ -202,7 +202,8 @@ Create a histogram with density plot
 data_to_explore%>%
   ggplot(aes(x=time_spent_hours)) +
   geom_histogram(aes(y=..density..), colour="black", fill="white", bins = 10)+
- geom_density(alpha=.2, fill="#FF6666") 
+  #this adds another layer on top of histogram
+ geom_density(alpha=.2, fill="#FF6666") +
   labs(title="Time Spent on LMS histogram/density plot",x="Time Spent(hours)", y = "Density")+
   theme_classic()
 ```
@@ -217,7 +218,7 @@ Make a scatterplot using the sci_classes data to examine the relationship betwee
  - Set the alpha (transparency) to 0.5.   
 
 ```{r}
-sci_classes <- read_csv("~/RProj22/foundation_labs_2022/foundation_lab_3/data/sci-online-classes.csv")
+sci_classes <- read_csv("data/sci-online-classes.csv")
 
 ggplot(data = sci_classes, mapping = aes(x = TimeSpent_hours, y = FinalGradeCEMS)) +
   geom_point(alpha=0.5) +
